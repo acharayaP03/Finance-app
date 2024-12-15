@@ -1,5 +1,5 @@
 <template>
-  <div class="border rounded-sm p-4">
+  <div class="border rounded-sm p-4" v-if="data.length">
     <highchart :options="options" />
   </div>
 </template>
@@ -8,8 +8,8 @@
 import { ref } from "vue";
 
 const { data = [], currentCategory = '' } = defineProps<{
-    currentCategory?: string;
-    data: number[]
+  currentCategory?: string;
+  data: number[]
 }>();
 
 let categories = ref<{ [key: string]: string[] }>({

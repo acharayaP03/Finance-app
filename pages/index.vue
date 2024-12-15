@@ -5,7 +5,7 @@
                 <p>Hi, welcome back XXXX!</p>
                 <h1>Overview</h1>
             </div>
-            <div class="w-[120px] h-8 bg-neutral-200"></div>
+            <ProductNew />
         </header>
         <main class="grid gap-2">
             <div class="flex items-center gap-4">
@@ -15,15 +15,14 @@
                             {{ title }}
                         </TabsTrigger>
                     </TabsList>
-                    <TabsContent v-for="{ title } in list" :key="title" :value="title">
-                        <Charts :="{ currentCategory, data }" />
+                    <TabsContent v-for="{ title } in list" :key="title" :value="title" v-if="data.length">
+                        <Charts :="{ currentCategory, data }" v-if="data.length" />
                     </TabsContent>
                 </Tabs>
             </div>
 
             <section class="grid gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
                 <Cards class="" v-for="(item, index) in cards" :card="item" :key="index" />
-
             </section>
 
         </main>
@@ -77,19 +76,15 @@ export default defineComponent({
         const list = [
             {
                 title: 'Today',
-
             },
             {
                 title: 'Week',
-
             },
             {
                 title: 'Month',
-
             },
             {
                 title: 'Year',
-
             }
         ]
 

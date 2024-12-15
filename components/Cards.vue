@@ -3,7 +3,8 @@
     <CardHeader>
       <CardTitle class="flex items-center justify-between">
         <p>{{ card.title }}</p>
-        <Badge class="bg-green-500 rounded-full">{{ card.progression }}&nbsp;%</Badge>
+        <Badge :class="[computedBadgeBackgrouned, 'rounded-full']">
+          {{ identifier }}{{ card.progression }}&nbsp;%</Badge>
       </CardTitle>
     </CardHeader>
     <CardContent class="flex items-center justify-end px-4 pt-0 pb-2 border-b">
@@ -27,7 +28,6 @@ import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -43,4 +43,8 @@ export interface ICard {
 }
 
 const { card } = defineProps<{ card: ICard }>()
+
+const identifier = computed(() => card.title === 'Refunds' ? '-' : '+');
+const computedBadgeBackgrouned = computed(() => card.title === 'Sales' ? 'bg-green-500' : card.title === 'Refunds' ? 'bg-red-500' : 'bg-blue-500');
+
 </script>
