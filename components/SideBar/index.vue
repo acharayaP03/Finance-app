@@ -7,7 +7,7 @@
     </div>
     <div class="lg:flex w-[15rem] h-screen flex flex-col justify-between border-r">
       <SideBarMenu />
-      <div>User item</div>
+      <UserItem />
     </div>
   </div>
 </template>

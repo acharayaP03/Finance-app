@@ -8,10 +8,20 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/icon",
     "nuxt-highcharts",
+    "@nuxt/fonts",
   ],
   shadcn: {
     prefix: "",
     componentDir: "./components/ui",
   },
-  tailwindcss: {}
+  tailwindcss: {},
+  fonts: {
+    families: [
+      {
+        name: "popins",
+        provider: "google",
+        weights: ["400", "500", "600", "700"],
+      },
+    ],
+  },
 });

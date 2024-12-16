@@ -38,7 +38,7 @@ const createNewProduct = async () => {
         <AlertDialogContent>
             <AlertDialogHeader>
                 <AlertDialogTitle>Create a new product</AlertDialogTitle>
-                <Input placeholder="My product name" class="p-"/>
+                <Input placeholder="My product name" class="p-2"/>
             </AlertDialogHeader>
             <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
